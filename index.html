@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Birthday Love ❤️</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="lockScreen" class="lock-screen">
+  <div class="lock-box">
+    <div class="lock-icon">🔐</div>
+    <div class="tag">رسالة سرية</div>
+    <h2>المفاجأة دي ليكي إنتِ بس ❤️</h2>
+    <p>اكتبي كلمة السر عشان نبدأ الحكاية...</p>
+    <input id="passwordInput" type="password" placeholder="كلمة السر">
+    <button class="main-btn" onclick="unlock()">افتحي المفاجأة ✨</button>
+    <p id="wrongPassword" class="wrong"></p>
+  </div>
+</div>
+<div id="particles"></div>
+<header class="hero">
+  <nav><div class="brand">Birthday Love <span>♥</span></div><button class="ghost" onclick="openEditor()">⚙️ تعديل الموقع</button></nav>
+  <div class="hero-inner">
+    <div class="cake">🎂</div>
+    <div class="tag">يوم مميز لشخص مميز</div>
+    <h1>كل سنة وإنتِ <em id="heroName">حبيبتي</em> ❤️</h1>
+    <p id="heroIntro">النهارده مش يوم عادي… النهارده اليوم اللي الدنيا بقت أحلى فيه.</p>
+    <a class="main-btn" href="#letter">ابدئي المفاجأة ✨</a>
+  </div>
+</header>
+
+<section id="letter" class="section">
+  <div class="tag">من قلبي ليكي</div><h2>رسالة حب 💌</h2>
+  <article class="letter"><p id="letterText"></p><strong id="signature"></strong></article>
+</section>
+
+<section class="section">
+  <div class="tag">ذكرياتنا</div><h2>صورنا الحلوة 📸</h2>
+  <div id="gallery" class="gallery"></div>
+</section>
+
+<section class="section">
+  <div class="tag">استني اللحظة</div><h2>العد التنازلي 🎉</h2>
+  <div id="countdown" class="countdown"></div>
+</section>
+
+<section class="section">
+  <div class="surprise">
+    <div class="gift">🎁</div><h2>فيه مفاجأة ليكي!</h2>
+    <p>اضغطي على الهدية عشان تعرفي آخر رسالة ❤️</p>
+    <button class="main-btn" onclick="showSurprise()">افتحي الهدية</button>
+    <div id="surpriseText" class="surprise-text"></div>
+  </div>
+</section>
+
+<div class="music"><button onclick="toggleMusic()" id="musicBtn">🎵</button></div>
+<audio id="audio" loop></audio>
+
+<div id="editor" class="modal hidden">
+  <div class="editor-card">
+    <button class="close" onclick="closeEditor()">×</button>
+    <div class="tag">لوحة التحكم</div><h2>عدّلي الموقع براحتك ✨</h2>
+    <p class="small">التعديلات دي بتتحفظ على الجهاز اللي بتعدلي منه.</p>
+    <label>اسمها<input id="fName"></label>
+    <label>اسمك<input id="fSender"></label>
+    <label>المقدمة<textarea id="fIntro"></textarea></label>
+    <label>رسالة الحب<textarea id="fLetter" rows="5"></textarea></label>
+    <label>رسالة المفاجأة<textarea id="fSurprise" rows="4"></textarea></label>
+    <label>تاريخ ووقت عيد الميلاد<input id="fDate" type="datetime-local"></label>
+    <label>رابط الأغنية MP3 (اختياري)<input id="fMusic" placeholder="https://..."></label>
+<label>كلمة سر المفاجأة 🔐<input id="fPassword" type="text" placeholder="مثال: 1409"></label>
+    <div class="upload-row">
+      <label class="upload">📸 إضافة صورة 1<input type="file" accept="image/*" onchange="pickImage(event,0)"></label>
+      <label class="upload">📸 إضافة صورة 2<input type="file" accept="image/*" onchange="pickImage(event,1)"></label>
+      <label class="upload">📸 إضافة صورة 3<input type="file" accept="image/*" onchange="pickImage(event,2)"></label>
+    </div>
+    <div class="actions"><button class="main-btn" onclick="save()">حفظ ❤️</button><button class="reset" onclick="resetData()">بيانات تجريبية</button></div>
+    <div id="status"></div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body></html>
